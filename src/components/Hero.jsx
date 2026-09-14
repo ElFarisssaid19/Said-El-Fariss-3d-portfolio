@@ -1,16 +1,32 @@
+import { useRef } from "react";
 import { motion } from "framer-motion";
 
 import { styles } from "../styles";
 
 const Hero = () => {
+  const videoRef = useRef(null);
+
+  const handleContainerClick = () => {
+    const video = videoRef.current;
+    if (video && video.paused) {
+      video.play().catch(() => {});
+    }
+  };
+
   return (
-    <section className={`relative w-full h-screen mx-auto overflow-hidden`}>
+    <section
+      className={`relative w-full h-screen mx-auto overflow-hidden`}
+      onClick={handleContainerClick}
+    >
       <video
+        ref={videoRef}
         src="/videos/hero-bg.mp4"
         autoPlay
         loop
         muted
         playsInline
+        webkit-playsinline="true"
+        style={{ pointerEvents: "none" }}
         className="absolute inset-0 w-full h-full object-cover z-0"
       />
       <div className="absolute inset-0 bg-black/40 z-[1]" />
