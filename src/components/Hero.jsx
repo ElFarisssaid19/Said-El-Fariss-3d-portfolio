@@ -2,6 +2,7 @@ import { useRef } from "react";
 import { motion } from "framer-motion";
 
 import { styles } from "../styles";
+import { publicPath } from "../utils/publicPath";
 
 const Hero = () => {
   const videoRef = useRef(null);
@@ -20,7 +21,9 @@ const Hero = () => {
     >
       <video
         ref={videoRef}
-        src="/videos/hero-bg.mp4"
+        src={publicPath("videos/hero-bg.mp4")}
+        poster={publicPath("videos/hero-poster.webp")}
+        preload="metadata"
         autoPlay
         loop
         muted
@@ -52,7 +55,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.75, delay: 0.2, ease: "easeOut" }}
-            href="/ElFarissSaid_CV.pdf"
+            href={publicPath("ElFarissSaid_CV.pdf")}
             download="Said_El_Fariss_CV.pdf"
             target="_blank"
             className="mt-6 inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-[#915EFF] text-white font-medium bg-transparent hover:bg-[#915EFF] transition-colors"
@@ -72,7 +75,7 @@ const Hero = () => {
       </div>
 
       <motion.img
-        src="/said-photo.png"
+        src={publicPath("said-photo.png")}
         alt="Said El Fariss"
         initial={{ opacity: 0, x: 100 }}
         animate={{ opacity: 0.85, x: 0 }}

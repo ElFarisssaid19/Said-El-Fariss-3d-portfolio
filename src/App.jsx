@@ -1,38 +1,37 @@
-import { BrowserRouter } from "react-router-dom";
+import { lazy, Suspense } from "react";
 
 import {
   About,
   Contact,
-  ContactInfo,
   Experience,
   Services,
   Hero,
   Navbar,
   Tech,
   Works,
-  StarsCanvas,
+  Footer,
 } from "./components";
+
+const StarsCanvas = lazy(() => import("./components/canvas/Stars"));
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <div className="relative z-0 bg-primary">
-        <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center">
-          <Navbar />
-          <Hero />
-        </div>
-        <About />
-        <Experience />
-        <Tech />
-        <Works />
-        <Services />
-        <ContactInfo />
-        <div className="relative z-0">
-          <Contact />
+    <div className="relative z-0 bg-primary">
+      <Navbar />
+      <Hero />
+      <About />
+      <Experience />
+      <Tech />
+      <Works />
+      <Services />
+      <div className="relative z-0">
+        <Contact />
+        <Footer />
+        <Suspense fallback={null}>
           <StarsCanvas />
-        </div>
+        </Suspense>
       </div>
-    </BrowserRouter>
+    </div>
   );
 };
 

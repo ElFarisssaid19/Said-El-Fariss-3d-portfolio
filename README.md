@@ -1,13 +1,12 @@
 <a name="readme-top"></a>
 <div align="center">
 
-  <h1>Portfolio 3D — Said El Fariss</h1>
+  <h1>Said El Fariss — Full-Stack Web Developer</h1>
 
   <p>
-    Portfolio développeur interactif en 3D, construit avec React & Three.js
+    My personal portfolio website, built with React, Three.js and Tailwind CSS.
   </p>
 
-<!-- Badges -->
 <p>
   <a href="https://github.com/ElFarisssaid19">
     <img src="https://img.shields.io/badge/GitHub-ElFarisssaid19-181717?logo=github" alt="Said El Fariss on GitHub" />
@@ -17,199 +16,116 @@
   </a>
 </p>
 
- <h4>
-    <a href="https://github.com/ElFarisssaid19">GitHub</a>
-  </h4>
+<!-- TODO: add the live site URL -->
+
 </div>
-
-<br />
-
-<!-- Table of Contents -->
-<details>
-
-<summary>
-
-# :notebook_with_decorative_cover: Table of Contents
-
-</summary>
-
-- [About the Project](#star2-about-the-project)
-  * [Folder Structure](#bangbang-folder-structure)
-  * [Tech Stack](#space_invader-tech-stack)
-- [Getting Started](#toolbox-getting-started)
-  * [Installation](#gear-installation)
-  * [Run Locally](#running-run-locally)
-- [Contributing](#wave-contributing)
-- [License](#warning-license)
-- [Contact](#handshake-contact)
-- [Acknowledgements](#gem-acknowledgements)
-
-</details>
-
-<!-- About the Project -->
-## :star2: About the Project
 
 <div align="center">
-  <img src="readme_assets/3d-portfolio.png" height="auto" width="90%"/>
+  <img src="readme_assets/screenshot.webp" alt="Screenshot of the portfolio home page" width="90%" />
 </div>
 
-<br />
+## About
 
-Portfolio personnel de Said El Fariss, étudiant en BTS Développement Web Full Stack (Centre de BTS de Chichaoua, OFPPT). Ce site présente mon parcours, mon expérience de stage et mes projets, à travers des sections Navbar, Hero, Overview, Expérience, Technologies, Projets, Témoignages et Contact, construites avec React & Three.js et TailwindCSS ⏭
+I'm Said El Fariss, a full-stack web development student at Centre de BTS de Chichaoua, Morocco. This site presents my experience, education, projects and contact details.
 
-<!-- Folder Structure -->
-### :bangbang: Folder Structure
+Sections: Hero, Overview, Experience & Education, Technologies, Projects, Services and Contact.
 
-Here is the folder structure of 3D-Portfolio.
+## Tech Stack
+
+- [React 18](https://react.dev/) + [Vite 8](https://vitejs.dev/)
+- [Three.js](https://threejs.org/) with [React Three Fiber](https://docs.pmnd.rs/react-three-fiber) and [Drei](https://github.com/pmndrs/drei)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Framer Motion](https://www.framer.com/motion/)
+- [EmailJS](https://www.emailjs.com/) for the contact form
+
+## Folder Structure
+
 ```bash
-Threejs_3D_Portfolio/
-|- public/
+Said-El-Fariss-3d-portfolio/
+|- public/            # static files: 3D models, images, video, CV
+|- readme_assets/
 |- src/
-  |-- assets/
-  |-- components/
-  |-- constants/
-  |-- hoc/
-  |-- utils/
+  |-- assets/         # icons and images imported by components
+  |-- components/     # page sections
+    |--- canvas/      # Three.js scenes (tech balls, Earth, stars)
+  |-- constants/      # site content: experience, projects, technologies...
+  |-- hoc/            # section wrapper
+  |-- utils/          # animation variants
   |-- App.jsx
   |-- index.css
   |-- main.jsx
   |-- styles.js
+|- index.html
 |- postcss.config.cjs
 |- tailwind.config.cjs
 |- vite.config.js
 ```
-<br />
 
-<!-- TechStack -->
-### :space_invader: Tech Stack
+Most of the site content lives in [`src/constants/index.js`](src/constants/index.js).
 
-[![My Skills](https://skillicons.dev/icons?i=js,react,tailwind,threejs)](https://skillicons.dev)
+## Getting Started
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+Requirements: [Node.js](https://nodejs.org/) 20.19+ or 22.12+ and npm.
 
-<!-- Getting Started -->
-## :toolbox: Getting Started
+1. Clone the repository and install the dependencies:
 
-<!-- Installation -->
-### :gear: Installation
+   ```bash
+   git clone https://github.com/ElFarisssaid19/Said-El-Fariss-3d-portfolio.git
+   cd Said-El-Fariss-3d-portfolio
+   npm install
+   ```
 
-#### Step 1:
-Clone this repository.
+2. Copy `.env.example` to `.env` and fill in your own [EmailJS](https://www.emailjs.com/) credentials and contact details (needed for the contact form):
 
-#### Step 2:
+   ```bash
+   cp .env.example .env
+   ```
 
-3D-Portfolio using NPM (Node Package Manager), therefore, make sure that Node.js is installed by execute the following command in console:
+3. Start the development server:
 
-```bash
-  node -v
-```
+   ```bash
+   npm run dev
+   ```
 
-#### Step 3:
+4. Build and preview the production version:
 
-At the main folder execute the following command in console to get the required dependencies:
+   ```bash
+   npm run build
+   npm run preview
+   ```
 
-```bash
-  npm install
-```
+## Deployment
 
-#### Step 4:
+Two optional environment variables are read at build time:
 
-At the main folder execute the following command in console to creates a build directory with a production build of 3d portfolio:
-
-```bash
-  npm run build
-```
-
-#### Step 5:
-
-At the main folder execute the following command in console to preview the production build:
+| Variable    | Default                  | Purpose |
+|-------------|--------------------------|---------|
+| `SITE_URL`  | `https://TODO-SITE-URL`  | Public URL of the site, used for the canonical link and the Open Graph / Twitter tags. Include the sub-path on GitHub Pages. |
+| `BASE_PATH` | `/`                      | Path the site is served from. Keep `/` on Vercel or a custom domain; use `/<repo>/` for a GitHub Pages project site. |
 
 ```bash
-  npm run preview
+# Vercel / custom domain
+SITE_URL=https://your-domain.com npm run build
+
+# GitHub Pages project site
+SITE_URL=https://elfarisssaid19.github.io/Said-El-Fariss-3d-portfolio \
+BASE_PATH=/Said-El-Fariss-3d-portfolio/ npm run build
 ```
 
-<!-- Run Locally -->
-### :running: Run Locally
+## Credits
 
-#### Step 1:
+- Based on the Three.js portfolio tutorial by [JavaScript Mastery](https://github.com/adrianhajdin), through [Soufain Najmi's version of the template](https://github.com/SoufainNajmi/Threejs-3D-Portfolio-main).
+- 3D models (licensed under [CC-BY-4.0](http://creativecommons.org/licenses/by/4.0/)):
+  - "[Stylized planet](https://sketchfab.com/3d-models/stylized-planet-789725db86f547fc9163b00f302c3e70)" by [cmzw](https://sketchfab.com/cmzw), used in the Contact section.
+  - "[Gaming Desktop PC](https://sketchfab.com/3d-models/gaming-desktop-pc-d1d8282c9916438091f11aeb28787b66)" by [Yolala1232](https://sketchfab.com/Yolala1232), used in earlier versions of the site.
+- Technology icons for Bootstrap, Next.js and Three.js from [Simple Icons](https://simpleicons.org/) (CC0); PHP, MySQL and Linux (Tux) icons from [Devicon](https://devicon.dev/) (MIT).
 
-At the main folder execute the following command in console to get the required dependencies:
-
-```bash
-  npm install
-```
-
-#### Step 2:
-
-Copy `.env.example` to `.env` and fill in your own [EmailJS](https://www.emailjs.com/) credentials and contact email (needed for the Contact form):
-
-```bash
-  cp .env.example .env
-```
-
-#### Step 3:
-
-At the main folder execute the following command in console to run the development server:
-
-```bash
-  npm run dev
-```
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- Contributing -->
-## :wave: Contributing
-
-<a href="https://github.com/ElFarisssaid19">
-  <img src="https://img.shields.io/badge/GitHub-ElFarisssaid19-181717?logo=github" alt="Said El Fariss on GitHub" />
-</a>
-
-
-Contributions are always welcome!
-
-See [`contributing.md`](https://contributing.md/) for ways to get started.
-
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-Don't forget to give the project a star! Thanks again!
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- License -->
-## :warning: License
+## License
 
 Distributed under the MIT License. See [LICENSE](LICENSE) for more information.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+## Contact
 
-<!-- Contact -->
-## :handshake: Contact
-
-Said El Fariss - [GitHub](https://github.com/ElFarisssaid19)
+Said El Fariss — [said.elfariss.dev@gmail.com](mailto:said.elfariss.dev@gmail.com) — [GitHub](https://github.com/ElFarisssaid19)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- Acknowledgments -->
-## :gem: Acknowledgements
-
-This section used to mention useful resources and libraries that used in 3D Portfolio
-
- - [Email JS](https://www.emailjs.com/)
- - [Framer Motion](https://www.framer.com/motion/)
- - [React Tilt](https://www.npmjs.com/package/react-tilt)
- - [React Vertical Timeline Component](https://www.npmjs.com/package/react-vertical-timeline-component)
- - #JSMastery
- - Based on the [Threejs 3D Portfolio](https://github.com/SoufainNajmi/Threejs-3D-Portfolio-main) template
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<p align="center">
-<img src="public/logo.png" height="auto" width="10%" />
-</p>

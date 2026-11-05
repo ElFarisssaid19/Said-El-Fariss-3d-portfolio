@@ -1,11 +1,19 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 
 const Alert = ({ type = "success", message, onClose }) => {
+  // Keep the latest callback in a ref so the timer starts once per alert
+  // and is not reset when the parent re-renders with a new function.
+  const onCloseRef = useRef(onClose);
+
   useEffect(() => {
-    const timer = setTimeout(onClose, 4500);
-    return () => clearTimeout(timer);
+    onCloseRef.current = onClose;
   }, [onClose]);
+
+  useEffect(() => {
+    const timer = setTimeout(() => onCloseRef.current(), 4500);
+    return () => clearTimeout(timer);
+  }, []);
 
   const accent = type === "success" ? "bg-green-400" : "bg-red-400";
 
@@ -15,6 +23,7 @@ const Alert = ({ type = "success", message, onClose }) => {
       animate={{ opacity: 1, y: 0, scale: 1 }}
       exit={{ opacity: 0, y: 20, scale: 0.95 }}
       transition={{ duration: 0.3 }}
+      role={type === "error" ? "alert" : "status"}
       className="fixed bottom-8 inset-x-0 mx-auto w-fit max-w-[90vw] z-50"
     >
       <div className="flex items-center gap-3 bg-tertiary text-white rounded-2xl shadow-card px-6 py-4">

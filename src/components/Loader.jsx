@@ -3,8 +3,9 @@ import { Html, useProgress } from "@react-three/drei";
 const Loader = () => {
   const { progress } = useProgress();
   return (
-    <Html>
-      <span className="canvas-load">
+    <Html center>
+      <div className="flex flex-col items-center">
+        <span className="canvas-loader" />
         <p
           style={{
             fontSize: 14,
@@ -13,9 +14,9 @@ const Loader = () => {
             marginTop: 40,
           }}
         >
-          {progress.toFixed(2)}
+          {progress.toFixed(0)}%
         </p>
-      </span>
+      </div>
     </Html>
   );
 };

@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -39,20 +37,23 @@ body,
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
+/* Vertical fade, top to bottom. Legacy -webkit- angles start at "to right"
+   and turn counter-clockwise, so -90deg legacy = 180deg standard. */
 .violet-gradient {
   background: #804dee;
-  background: linear-gradient(-90deg, #804dee 0%, rgba(60, 51, 80, 0) 100%);
   background: -webkit-linear-gradient(
     -90deg,
     #804dee 0%,
     rgba(60, 51, 80, 0) 100%
   );
+  background: linear-gradient(180deg, #804dee 0%, rgba(60, 51, 80, 0) 100%);
 }
 
+/* Left to right. 90.13deg standard = -0.13deg legacy (90deg - angle). */
 .green-pink-gradient {
-  background: "#00cea8";
+  background: #00cea8;
+  background: -webkit-linear-gradient(-0.13deg, #00cea8 1.9%, #bf61ff 97.5%);
   background: linear-gradient(90.13deg, #00cea8 1.9%, #bf61ff 97.5%);
-  background: -webkit-linear-gradient(-90.13deg, #00cea8 1.9%, #bf61ff 97.5%);
 }
 
 .orange-text-gradient {
