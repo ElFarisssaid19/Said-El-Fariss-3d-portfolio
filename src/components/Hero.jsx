@@ -55,7 +55,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.75, delay: 0.2, ease: "easeOut" }}
-            href={publicPath("ElFarissSaid_CV.pdf")}
+            href={publicPath("Said_El_Fariss.pdf")}
             download="Said_El_Fariss_CV.pdf"
             target="_blank"
             className="mt-6 inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-[#915EFF] text-white font-medium bg-transparent hover:bg-[#915EFF] transition-colors"
