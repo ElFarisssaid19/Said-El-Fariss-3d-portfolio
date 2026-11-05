@@ -201,6 +201,58 @@ const projects = [
     live_demo_link: "", // TODO: current live URL
   },
   {
+    name: "ElevatePro",
+    description:
+      "Responsive showcase site for a personal coach: services, coach profile and a booking form that sends requests by email through EmailJS, with no backend. Available in English, French and Arabic with automatic RTL, animated with Framer Motion and covered by Playwright end-to-end tests.",
+    tags: [
+      {
+        name: "react",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "typescript",
+        color: "green-text-gradient",
+      },
+      {
+        name: "framer-motion",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "emailjs",
+        color: "orange-text-gradient",
+      },
+    ],
+    image: publicPath("elevatepro.webp"),
+    source_code_link: "https://github.com/ElFarisssaid19/Training-SiteWeb",
+    live_demo_link: "",
+  },
+  {
+    name: "Tumble Run",
+    description:
+      "Low-poly marble race game that runs in the browser. Roll the marble through obstacle courses with real-time physics, multiple levels, boss fights, power-ups, portals and weather effects, with touch controls on mobile. Game logic covered by Vitest unit tests.",
+    tags: [
+      {
+        name: "react-three-fiber",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "threejs",
+        color: "green-text-gradient",
+      },
+      {
+        name: "rapier",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "typescript",
+        color: "orange-text-gradient",
+      },
+    ],
+    image: publicPath("tumble-run.webp"),
+    source_code_link: "https://github.com/ElFarisssaid19/Tumble-Run",
+    live_demo_link: "",
+  },
+  {
     name: "Commit Garden",
     description:
       "Turns any GitHub contribution graph into a 3D low-poly garden.",
