@@ -171,6 +171,18 @@ const services = [
       "Server-side logic, MySQL databases and secure authentication (PHP, Google OAuth).",
     icon: backend,
   },
+  {
+    title: "Multilingual Websites",
+    description:
+      "Websites in Arabic, French and English with a full right-to-left (RTL) layout for Arabic, plus online payments with PayPal and secure Google login when needed.",
+    icon: web,
+  },
+  {
+    title: "Bug Fixing & Maintenance",
+    description:
+      "Fixing bugs and improving existing websites, then deploying the updates to production.",
+    icon: deploy,
+  },
 ];
 
 const projects = [

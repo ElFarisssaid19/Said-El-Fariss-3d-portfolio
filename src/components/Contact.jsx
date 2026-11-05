@@ -38,6 +38,14 @@ const icons = {
       <path d="M6.94 5a2 2 0 11-4-.02 2 2 0 014 .02zM7 8.48H3V21h4V8.48zm6.32 0H9.35V21h3.97v-6.4c0-3.57 4.6-3.86 4.6 0V21H21v-7.93c0-6.17-6.78-5.94-7.68-2.91V8.48z" />
     </svg>
   ),
+  whatsapp: (
+    <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6" aria-hidden="true">
+      <path d="M12 3.5a8.5 8.5 0 0 0-7.4 12.7L3.5 20.5l4.4-1.1A8.5 8.5 0 1 0 12 3.5z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
+      <circle cx="8.5" cy="12" r="1" fill="currentColor" />
+      <circle cx="12" cy="12" r="1" fill="currentColor" />
+      <circle cx="15.5" cy="12" r="1" fill="currentColor" />
+    </svg>
+  ),
 };
 
 const contactDetails = [
@@ -56,7 +64,22 @@ const contactDetails = [
     href: "https://github.com/ElFarisssaid19",
     external: true,
   },
-  // TODO: add LinkedIn ({ key: "linkedin", label: "LinkedIn", value, href, external: true })
+  {
+    key: "linkedin",
+    label: "LinkedIn",
+    value: "linkedin.com/in/said-el-fariss",
+    href: "https://www.linkedin.com/in/said-el-fariss",
+    external: true,
+  },
+  {
+    key: "whatsapp",
+    label: "WhatsApp",
+    value: "+212 626-444271",
+    href: `https://wa.me/212626444271?text=${encodeURIComponent(
+      "Hello Said, I saw your portfolio."
+    )}`,
+    external: true,
+  },
 ];
 
 const fieldClassName =
